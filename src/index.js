@@ -15,10 +15,10 @@ export default function (Alpine) {
 
     const options = { ...default_options, ...user_options }
 
-    console.log(options)
+    // console.log(options)
 
     const _slideshow = new Swiper(element)
 
-    console.log(_slideshow)
+    // console.log(_slideshow)
   })
 }
