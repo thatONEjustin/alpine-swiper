@@ -4974,13 +4974,14 @@ Swiper.use([Resize, Observer]);
 
 // src/index.js
 function src_default(Alpine) {
-  Alpine.directive("swiper", (element, { expression }, { evaluate }) => {
+  Alpine.directive("swiper", async (element, { expression }, { evaluate }) => {
     const user_options = evaluate(expression);
     const default_options = {
       modules: [Navigation, Pagination]
     };
     const options = { ...user_options, ...default_options };
-    const _slideshow = new Swiper(element, options);
+    await Alpine.$nextTick;
+    const slideshow = new Swiper(element, options);
   });
 }
 

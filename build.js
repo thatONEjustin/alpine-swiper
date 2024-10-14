@@ -2,7 +2,7 @@ import esbuild from 'esbuild';
 // const esbuild = require('esbuild');
 // const { file: brotliSizeFromFile } = require('brotli-size');
 
-const scriptName = 'swiper';
+const scriptName = 'module';
 const watching = process.argv.includes('--watch');
 
 function build(options = {}) {
@@ -82,6 +82,14 @@ function buildScripts() {
     console.log(`✅ ${options.outfile}`)
   })
 
+  // example file!
+  build({
+    entryPoints: ['builds/cdn.js'],
+    outfile: `dist/example.js`,
+    bundle: true,
+  }).then(async ({ options }) => {
+    console.log(`✅ ${options.outfile}`)
+  })
 }
 
 async function watch() {

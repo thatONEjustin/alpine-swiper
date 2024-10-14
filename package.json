@@ -1,9 +1,10 @@
 {
   "name": "alpine-swiper",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "alpine directive for using the swiperjs library",
-  "main": "index.js",
-  "type": "module",
+  "main": "dist/module.cjs.js",
+  "module": "dist/module.esm.js",
+  "unpkg": "dist/cdn.min.js",
   "scripts": {
     "test:init": "jest --init",
     "test": "jest",
