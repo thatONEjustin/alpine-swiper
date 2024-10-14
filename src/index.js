@@ -2,7 +2,7 @@ import { Navigation, Pagination } from 'swiper/modules';
 import Swiper from 'swiper';
 
 export default function (Alpine) {
-  Alpine.directive('swiper', (
+  Alpine.directive('swiper', async (
     element,
     { expression },
     { evaluate }
@@ -14,6 +14,9 @@ export default function (Alpine) {
     }
 
     const options = { ...user_options, ...default_options }
-    const _slideshow = new Swiper(element, options)
+
+    await Alpine.$nextTick
+
+    const slideshow = new Swiper(element, options)
   })
 }

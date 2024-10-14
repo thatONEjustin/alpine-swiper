@@ -1,7 +1,7 @@
 {
   "name": "alpine-swiper",
-  "version": "1.0.0",
-  "description": "x-directive and $magic for using the swiperjs library",
+  "version": "1.0.1",
+  "description": "alpine directive for using the swiperjs library",
   "main": "index.js",
   "type": "module",
   "scripts": {

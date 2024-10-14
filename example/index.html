@@ -33,43 +33,44 @@
               el: '.swiper-pagination',
               type: 'bullets'
             }
+          },
+          slides: [
+            'https://picsum.photos/id/17/900/900',
+            'https://picsum.photos/id/18/900/900',
+            'https://picsum.photos/id/19/900/900',
+            'https://picsum.photos/id/20/900/900',
+          ],
+          test() {
+            $el.swiper.slideNext()
           }
         }"
         x-swiper="options">
         <div class="swiper-wrapper">
+
+          <template x-for="slide in slides">
+            <div class="swiper-slide" @click="test">
+              <img :src="slide" class="object-cover w-full h-full" loading="lazy" />
+            </div>
+          </template>
+
           <!--
-          NOTE: laravel blade implementation of slides could look like this
+          NOTE: static generation of slides works!
+          example in laravael blade
           @foreach ($slides as $slide)
-          <div class="swiper-slide">
+          <div class="swiper-slide" @click="test">
             <img src="{{ $slide['url'] }}" class="object-cover w-full h-full" alt="{{ $slide['alt'] }}"/>
           </div>
           @endforeach
           -->
-
-          <div class="swiper-slide">
-            <img src="https://picsum.photos/id/17/900/900" class="object-cover w-full h-full" loading="lazy"/>
-          </div>
-
-          <div class="swiper-slide">
-            <img src="https://picsum.photos/id/16/900/900" class="object-cover w-full h-full" loading="lazy"/>
-          </div>
-
-          <div class="swiper-slide">
-            <img src="https://picsum.photos/id/18/900/900" class="object-cover w-full h-full" loading="lazy"/>
-          </div>
-
-          <div class="swiper-slide">
-            <img src="https://picsum.photos/id/19/900/900" class="object-cover w-full h-full" loading="lazy"/>
-          </div>
         </div>
 
-        <div class="swiper-button-prev z-50"></div>
-        <div class="swiper-button-next z-50"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
 
         <div class="swiper-pagination"></div>
       </div>
     </div>
-    <script defer src="../dist/example.js"></script> <!-- /dist/example.js is just swiper.js but piped for watch -->
+    <script defer src="../dist/example.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   </body>
 </html>

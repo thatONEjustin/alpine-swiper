@@ -1,10 +1,12 @@
 # alpine-swiper
 
-x-directive for initializing swiperjs
+[alpinejs](https://alpinejs.dev/) directive for using the [swiperjs](https://swiperjs.com/) library
 
-Only Navigation and Pagination modules are included by default. Passing the proper module in through the options object should work.
+NOTE: only Navigation and Pagination modules are included by default.
 
 ## example
+
+NOTE: below is the most bare bones way to use this directive.
 
 ```html
 
@@ -38,6 +40,9 @@ Only Navigation and Pagination modules are included by default. Passing the prop
         </div>
       </div>
     </div>
+
+    <script defer src="./dist/example.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   </body>
 </html>
 ```
