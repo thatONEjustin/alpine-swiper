@@ -4954,8 +4954,8 @@ function src_default(Alpine) {
     const default_options = {
       modules: [Navigation, Pagination]
     };
-    const options = { ...default_options, ...user_options };
-    const _slideshow = new Swiper(element);
+    const options = { ...user_options, ...default_options };
+    const _slideshow = new Swiper(element, options);
   });
 }
 

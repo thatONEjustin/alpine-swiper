@@ -13,12 +13,7 @@ export default function (Alpine) {
       modules: [Navigation, Pagination]
     }
 
-    const options = { ...default_options, ...user_options }
-
-    // console.log(options)
-
-    const _slideshow = new Swiper(element)
-
-    // console.log(_slideshow)
+    const options = { ...user_options, ...default_options }
+    const _slideshow = new Swiper(element, options)
   })
 }
