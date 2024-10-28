@@ -36,21 +36,23 @@ function addModifiers(directive_modifiers: Array<string>): SwiperModule[] {
     return modules
   }
 
+  let added_by_modifier: Array<SwiperModule> = []
+
   for (const modifier of directive_modifiers) {
     switch (modifier) {
       case "autoplay":
-        modules.push(Autoplay)
+        added_by_modifier.push(Autoplay)
         break
       case "fade":
-        modules.push(EffectFade)
+        added_by_modifier.push(EffectFade)
         break
       case "controller":
-        modules.push(Controller)
+        added_by_modifier.push(Controller)
         break
       default:
         break
     }
   }
 
-  return modules
+  return [...added_by_modifier, ...modules]
 }
