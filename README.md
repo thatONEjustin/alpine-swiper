@@ -1,6 +1,17 @@
 # alpine-swiper
 
-[alpinejs](https://alpinejs.dev/) directive for using the [swiperjs](https://swiperjs.com/) library
+## New! 1.1.0
+
+Optional module support through modifiers! when
+just add `.moduleName` when invoking x-swiper
+
+```html
+<div x-data x-swiper.controller>
+  <!-- ... the rest of the component -->
+</div>
+```
+
+[alpinejs](https://alpinejs.dev/) directive for using [swiperjs](https://swiperjs.com/)
 
 NOTE: only Navigation and Pagination modules are included by default.
 
