@@ -1,40 +1,3 @@
-var __defProp = Object.defineProperty;
-var __getOwnPropSymbols = Object.getOwnPropertySymbols;
-var __hasOwnProp = Object.prototype.hasOwnProperty;
-var __propIsEnum = Object.prototype.propertyIsEnumerable;
-var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
-var __spreadValues = (a, b) => {
-  for (var prop in b ||= {})
-    if (__hasOwnProp.call(b, prop))
-      __defNormalProp(a, prop, b[prop]);
-  if (__getOwnPropSymbols)
-    for (var prop of __getOwnPropSymbols(b)) {
-      if (__propIsEnum.call(b, prop))
-        __defNormalProp(a, prop, b[prop]);
-    }
-  return a;
-};
-var __async = (__this, __arguments, generator) => {
-  return new Promise((resolve, reject) => {
-    var fulfilled = (value) => {
-      try {
-        step(generator.next(value));
-      } catch (e) {
-        reject(e);
-      }
-    };
-    var rejected = (value) => {
-      try {
-        step(generator.throw(value));
-      } catch (e) {
-        reject(e);
-      }
-    };
-    var step = (x) => x.done ? resolve(x.value) : Promise.resolve(x.value).then(fulfilled, rejected);
-    step((generator = generator.apply(__this, __arguments)).next());
-  });
-};
-
 // node_modules/swiper/shared/ssr-window.esm.mjs
 function isObject(obj) {
   return obj !== null && typeof obj === "object" && "constructor" in obj && obj.constructor === Object;
@@ -5680,22 +5643,23 @@ Swiper.use([Resize, Observer]);
 function src_default(Alpine) {
   Alpine.directive("swiper", SwiperDirective);
 }
-var SwiperDirective = (_0, _1, _2) => __async(void 0, [_0, _1, _2], function* (element, { expression, modifiers }, { Alpine, evaluate }) {
+var SwiperDirective = async (element, { expression, modifiers }, { Alpine, evaluate }) => {
   const user_options = evaluate(expression);
   const modules = addModifiers(modifiers);
   const default_options = {
     modules
   };
-  yield Alpine.$nextTick;
-  const swiper_options = __spreadValues(__spreadValues({}, user_options), default_options);
+  await Alpine.$nextTick;
+  const swiper_options = { ...user_options, ...default_options };
   const _slideshow = new Swiper(element, swiper_options);
-});
+};
 function addModifiers(directive_modifiers) {
   let modules = [Navigation, Pagination];
   if (directive_modifiers.length === 0) {
     return modules;
   }
   for (const modifier in directive_modifiers) {
+    console.log(modifier);
     switch (modifier) {
       case "autoplay":
         modules.push(Autoplay);

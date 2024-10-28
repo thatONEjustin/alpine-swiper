@@ -36,7 +36,7 @@ function addModifiers(directive_modifiers: Array<string>): SwiperModule[] {
     return modules
   }
 
-  for (const modifier in directive_modifiers) {
+  for (const modifier of directive_modifiers) {
     switch (modifier) {
       case "autoplay":
         modules.push(Autoplay)
