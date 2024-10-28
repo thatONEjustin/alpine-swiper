@@ -7,17 +7,17 @@ import {
 } from "swiper/modules";
 
 import Swiper from 'swiper';
-import { SwiperModule } from "swiper/types";
+import type { SwiperModule } from "swiper/types";
 import type { Alpine as AlpineInstance } from "alpinejs";
 
 export default function (Alpine: AlpineInstance) {
-  Alpine.directive('swiper', SwiperDirective)
+  Alpine.directive('swiper', swiper_directive)
 }
 
-const SwiperDirective = async (element: HTMLElement, { expression, modifiers }, { Alpine, evaluate }) => {
-  const user_options: Object = evaluate(expression)
-  const modules = addModifiers(modifiers)
+const swiper_directive = async (element: HTMLElement, { expression, modifiers }, { Alpine, evaluate }) => {
+  const modules: Array<SwiperModule> = add_module_from_modifiers(modifiers)
 
+  const user_options: Object = evaluate(expression)
   const default_options: Object = {
     modules: modules
   }
@@ -30,7 +30,7 @@ const SwiperDirective = async (element: HTMLElement, { expression, modifiers }, 
   const _slideshow = new Swiper(element, swiper_options)
 }
 
-function addModifiers(directive_modifiers: Array<string>): SwiperModule[] {
+function add_module_from_modifiers(directive_modifiers: Array<string>): SwiperModule[] {
   let modules: Array<SwiperModule> = [Navigation, Pagination]
   if (directive_modifiers.length === 0) {
     return modules
