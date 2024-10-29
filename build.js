@@ -1,12 +1,10 @@
 import esbuild from 'esbuild';
-// const esbuild = require('esbuild');
 import { file as brotliSizeFromFile } from 'brotli-size';
-// const { file: brotliSizeFromFile } = require('brotli-size');
 
 const scriptName = 'module';
 const watching = process.argv.includes('--watch');
 
-function build(options = {}) {
+async function build(options = {}) {
   options.define || (options.define = {});
   options.define['process.env.NODE_ENV'] = watching
     ? `'development'`
@@ -18,7 +16,7 @@ function build(options = {}) {
     })
     .then(result => ({ result, options }))
     .catch((_e) => {
-      // console.error(e);
+      console.error(e);
       process.exit(1)
     });
 }
