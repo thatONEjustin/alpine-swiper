@@ -14,7 +14,12 @@ export default function (Alpine: AlpineInstance) {
   Alpine.directive('swiper', swiper_directive)
 }
 
-const swiper_directive = async (element: HTMLElement, { expression, modifiers }, { Alpine, evaluate }) => {
+const swiper_directive = async (
+  element: HTMLElement,
+  { expression, modifiers },
+  { Alpine, evaluate }
+) => {
+
   const modules: Array<SwiperModule> = add_module_from_modifiers(modifiers)
 
   const user_options: Object = evaluate(expression)
