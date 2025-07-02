@@ -1,6 +1,6 @@
 {
     "name": "@thatonejustin/alpine-swiper",
-    "version": "1.2.1",
+    "version": "1.2.2",
     "description": "alpine directive for using the swiperjs library",
     "main": "dist/module.cjs.js",
     "module": "dist/module.esm.js",

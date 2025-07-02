@@ -1,6 +1,6 @@
 # alpine-swiper
 
-## New! 1.1.0
+## New! 1.2.2
 
 Optional module support through modifiers! when
 just add `.moduleName` when invoking x-swiper
