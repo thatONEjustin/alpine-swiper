@@ -6,8 +6,8 @@ import {
     Controller,
 } from "swiper/modules";
 
-// import Swiper from 'swiper';
-import type { Swiper, SwiperModule } from "swiper/types";
+import Swiper from 'swiper';
+import type { Swiper as SwiperType, SwiperModule } from "swiper/types";
 import type { Alpine as AlpineInstance } from "alpinejs";
 
 export default function (Alpine: AlpineInstance) {
