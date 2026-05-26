@@ -4,6 +4,7 @@ import {
     Pagination,
     EffectFade,
     Controller,
+    EffectCards,
 } from "swiper/modules";
 
 import Swiper from 'swiper';
@@ -33,7 +34,7 @@ const swiper_directive = async (
 
     /* tslint:disable:no-unused-variable */
     await Alpine.$nextTick
-    const _slideshow = new Swiper(element, swiper_options)
+    const slideshow = new Swiper(element, swiper_options) // @ts-ignore
 }
 
 function add_module_from_modifiers(directive_modifiers: Array<string>): SwiperModule[] {
@@ -51,6 +52,10 @@ function add_module_from_modifiers(directive_modifiers: Array<string>): SwiperMo
                 break
             case "fade":
                 added_by_modifier.push(EffectFade)
+                break
+
+            case "cards":
+                added_by_modifier.push(EffectCards)
                 break
             case "controller":
                 added_by_modifier.push(Controller)
