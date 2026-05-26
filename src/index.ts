@@ -53,7 +53,6 @@ function add_module_from_modifiers(directive_modifiers: Array<string>): SwiperMo
             case "fade":
                 added_by_modifier.push(EffectFade)
                 break
-
             case "cards":
                 added_by_modifier.push(EffectCards)
                 break

@@ -1,9 +1,8 @@
 # alpine-swiper
 
-## New! 1.2.2
+## New! 1.2.7
 
-Optional module support through modifiers! when
-just add `.moduleName` when invoking x-swiper
+Card effects added in.
 
 ```html
 <div x-data x-swiper.controller>
