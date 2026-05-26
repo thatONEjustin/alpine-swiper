@@ -1142,7 +1142,7 @@
       control: void 0
     };
     function LinearSpline(x, y) {
-      const binarySearch = /* @__PURE__ */ function search() {
+      const binarySearch = /* @__PURE__ */ (function search() {
         let maxIndex;
         let minIndex;
         let guess;
@@ -1159,7 +1159,7 @@
           }
           return maxIndex;
         };
-      }();
+      })();
       this.x = x;
       this.y = y;
       this.lastIndex = x.length - 1;
