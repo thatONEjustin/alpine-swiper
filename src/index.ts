@@ -5,6 +5,7 @@ import {
     EffectFade,
     Controller,
     EffectCards,
+    Thumbs,
 } from "swiper/modules";
 
 import Swiper from 'swiper';
@@ -15,12 +16,7 @@ export default function (Alpine: AlpineInstance) {
     Alpine.directive('swiper', swiper_directive)
 }
 
-const swiper_directive = async (
-    element: HTMLElement,
-    { expression, modifiers },
-    { Alpine, evaluate }
-) => {
-
+const swiper_directive = async (element: HTMLElement, { expression, modifiers }, { Alpine, evaluate }) => {
     const modules: Array<SwiperModule> = add_module_from_modifiers(modifiers)
 
     const user_options: Object = evaluate(expression)
@@ -33,8 +29,7 @@ const swiper_directive = async (
     const swiper_options: Object = { ...user_options, ...default_options }
 
     /* tslint:disable:no-unused-variable */
-    await Alpine.$nextTick
-    const slideshow = new Swiper(element, swiper_options) // @ts-ignore
+    const _slideshow = new Swiper(element, swiper_options)
 }
 
 function add_module_from_modifiers(directive_modifiers: Array<string>): SwiperModule[] {
@@ -53,12 +48,11 @@ function add_module_from_modifiers(directive_modifiers: Array<string>): SwiperMo
             case "fade":
                 added_by_modifier.push(EffectFade)
                 break
-            case "cards":
-                added_by_modifier.push(EffectCards)
-                break
             case "controller":
                 added_by_modifier.push(Controller)
                 break
+            case "thumbs":
+                added_by_modifier.push(Thumbs)
             default:
                 break
         }
