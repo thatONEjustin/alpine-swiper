@@ -1,11 +1,11 @@
 # alpine-swiper
 
-## New! 1.2.7
+## New! 1.2.8
 
-Card effects added in.
+Thumbs module is now included by default.
 
 ```html
-<div x-data x-swiper.controller>
+<div x-data x-swiper.thumbs>
   <!-- ... the rest of the component -->
 </div>
 ```
