@@ -1,28 +1,25 @@
 <html>
-  <head>
+
+<head>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     <style>
-    .swiper {
-      width: 900px;
-      height: 900px;
-    }
-    .swiper-slide {
-      width: 900px;
-      height: 900px;
-    }
+        .swiper {
+            width: 900px;
+            height: 900px;
+        }
+
+        .swiper-slide {
+            width: 900px;
+            height: 900px;
+        }
     </style>
-  </head>
+</head>
 
 <body>
     <div class="max-w-content">
-        <div
-            class="swiper main-image mx-auto"
-            x-data="{
+        <div class="swiper main-image mx-auto" x-data="{
                 options: {
                     navigation: {
                         prevEl: '.swiper-button-prev',
@@ -45,8 +42,7 @@
                 test() {
                     $el.swiper.slideNext()
                 },
-            }"
-            x-swiper.controller="options">
+            }" x-swiper.thumbs="options">
             <div class="swiper-wrapper">
                 <template x-for="slide in slides">
                     <div class="swiper-slide" @click="test">
@@ -61,9 +57,7 @@
             <div class="swiper-pagination"></div>
         </div>
 
-        <div 
-            class="swiper ThumbGallery mx-auto"
-            x-data="{
+        <div class="swiper ThumbGallery mx-auto" x-data="{
                 options: {
                     spaceBetween: 10,
                     slidesPerView: 4,
@@ -77,9 +71,7 @@
                     'https://picsum.photos/id/19/900/900',
                     'https://picsum.photos/id/20/900/900',
                 ],
-            }"
-            x-swiper.controller="options"
-        >
+            }" x-swiper.controller="options">
             <div class="swiper-wrapper">
                 <template x-for="slide in slides">
                     <div class="swiper-slide w-[150px] w-[90px] overflow-hidden">
@@ -92,5 +84,6 @@
     <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script defer src="../dist/example.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-  </body>
+</body>
+
 </html>

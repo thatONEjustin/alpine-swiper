@@ -1,6 +1,10 @@
 # alpine-swiper
 
-## New! 1.2.8
+## New 1.3.0
+
+updated swiperjs to 14.1.0
+
+## 1.2.8
 
 Thumbs module is now included by default.
 
@@ -9,6 +13,8 @@ Thumbs module is now included by default.
   <!-- ... the rest of the component -->
 </div>
 ```
+
+example updated as well!
 
 [alpinejs](https://alpinejs.dev/) directive for using [swiperjs](https://swiperjs.com/)
 
